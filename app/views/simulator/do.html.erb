@@ -1,0 +1,37 @@
+<h1>Car Simulator</h1>
+
+Congrats! <%=@car.car_info%>
+
+<br></br>
+
+
+
+
+<form id="lights" action="/simulator/lights_do">
+  <input id="lightsOn" type="radio" name="lights" value="Lights On"<%= @car.lights ? "checked" : ""%>> Lights On<br></br>
+  <input id="lightsOff" type="radio" name="lights" value="Lights Off" <%= @car.lights ? "" : "checked"%> > Lights Off<br>
+  <input type="submit" value="Submit"/>
+</form>
+
+
+
+
+<form action="/simulator/accelerate">
+  <input type="submit" value="Accelerate"/>
+</form>
+
+<form action="/simulator/decelerate">
+  <input type="submit" value="Decelerate"/>
+</form>
+
+
+<%=@car.speed%>
+
+
+<form id="parking_brake" action="/simulator/parking_do">
+  <input id="parking_on" type="radio" name="parking" value="Parking Brake On"<%= @car.parking ? "checked" : ""%>> Parking Brake On<br></br>
+  <input id="parking_off" type="radio" name="parking" value="Parking Brake Off" <%= @car.parking ? "" : "checked"%> > Parking Brake Off<br>
+  <input type="submit" value="Set Parking Brake"/>
+</form>
+
+<!-- Our parking brake is still not setting -->
